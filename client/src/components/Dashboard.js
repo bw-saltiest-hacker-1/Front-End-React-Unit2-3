@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 import axios from 'axios'
 
+import Comments from './Comments'
+
 function Dashboard(props) {
 
     //using useEffect at the time being until we set up a data management
@@ -19,13 +21,7 @@ function Dashboard(props) {
     }, [])
 
 
-    const cards = data.map(item => (
-        <div>
-            <h3>{item.username}</h3>
-            <p>{item.troll}</p>
-            <p>{item.comment}</p>
-        </div>
-    ))
+    const cards = data.map(item => <Comments key={item.id} item={item} />)
 
     return (
         <div>

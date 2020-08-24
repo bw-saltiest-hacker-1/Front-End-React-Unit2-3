@@ -15,8 +15,9 @@ function App() {
   useEffect(() => {
     axios.get('https://jsonblob.com/api/jsonBlob/9af77dc1-e634-11ea-b735-83f87d192444')
       .then(res => {
-        console.log(res.data.payload)
+        console.log(res.data)
         localStorage.setItem('token', res.data.payload)
+        setUser(res.data.data)
       })
       .catch(err => {
         console.log(err)
