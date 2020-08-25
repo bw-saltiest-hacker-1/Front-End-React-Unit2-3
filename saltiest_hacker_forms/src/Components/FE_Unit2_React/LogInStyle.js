@@ -30,6 +30,7 @@ export const H3two = styled.h3`
     width: 70px;
     text-align: center;
     :hover{
+        font-family: 'Londrina Solid', cursive;
         color: ${customColor3};
         border-bottom: 2px solid ${customColor2}
     }
@@ -83,6 +84,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 border-radius: 5px;
+font-family: 'Londrina Solid', cursive;
 `
 
 export const Error = styled.p`
@@ -110,6 +112,7 @@ export const H3one2 = styled.h3`
     width: 70px;
     text-align: center;
     :hover{
+        font-family: 'Londrina Solid', cursive;
         color: ${customColor3};
         border-bottom: 2px solid ${customColor2}
     }
