@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { axiosWithAuth } from '../Utils/axiosWithAuth';
 
-// BACKEND_BASE_API
+// <<<<<< BACKEND_BASE_API >>>>>>
 const BASE_URL = "ENTER_BASE_URL"
 
 export const LOGIN = "login/";

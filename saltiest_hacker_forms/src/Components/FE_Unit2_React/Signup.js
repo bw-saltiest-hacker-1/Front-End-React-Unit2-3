@@ -62,6 +62,7 @@ export default function LogInForm(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        // <<<<<< BACKEND_REGISTER_API >>>>>>
         axios.post('BACKEND_REGISTER_API', form)
             .then(res => {
                 console.log(res)
