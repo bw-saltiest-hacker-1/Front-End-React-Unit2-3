@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.Signup-Background {
+  position: absolute;
+  width: 100vw;
+  height: 944px;
+  left: 0px;
+  top: 80px;
+}
+
+.Saltiest-logo {
+  height: 100px;
+  width: auto;
+  position: absolute;
+  left: 3.33%;
+  right: 81.6%;
+  top: 16.67%;
+  bottom: 16.67%;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
