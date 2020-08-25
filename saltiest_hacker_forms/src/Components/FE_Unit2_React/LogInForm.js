@@ -61,7 +61,7 @@ export default function LogInForm(props) {
         axios.post("https://salty-hacker-1-bw.herokuapp.com/api/auth/login", form)
         .then((res) => {
         console.log(res);
-        // setUserInfo(res.data, ...userInfo)
+        setUserInfo(res.data, ...userInfo)
         setForm(initialForm);
         // history.push("/dashboard")
         })
