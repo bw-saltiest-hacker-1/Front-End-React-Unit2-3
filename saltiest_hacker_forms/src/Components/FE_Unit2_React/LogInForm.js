@@ -56,17 +56,18 @@ export default function LogInForm(props) {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        axios.post('BACKEND_LOGIN_API', form)
-            .then(res => {
-                console.log(res)
-                // setUserInfo(res.data, ...userInfo)
-                setForm(initialForm)
-                // history.push("/dashboard")
-            })
-            .catch((err => {
-                console.log(err)
-            }))
+    e.preventDefault();
+    // <<<<<< BACKEND_REGISTER_API >>>>>>
+    axios.post("BACKEND_LOGIN_API", form)
+        .then((res) => {
+        console.log(res);
+        // setUserInfo(res.data, ...userInfo)
+        setForm(initialForm);
+        // history.push("/dashboard")
+        })
+        .catch((err) => {
+        console.log(err);
+        });
     }
 
     useEffect(() => {
