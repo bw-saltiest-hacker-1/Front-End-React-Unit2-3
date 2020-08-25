@@ -6,7 +6,7 @@ import LogInForm from './Components/FE_Unit2_React/LogInForm'
 import Signup from './Components/FE_Unit2_React/Signup'
 import PrivateRoute from '../src/Utils/PrivateRoute';
 import SaltiestContext from '../src/Contexts/saltiestContext'
-// import Dashboard from './Components/Plants/Dashboard';
+// import Dashboard from './Components/Dashboard';
 
 function App() {
   const [userInfo, setUserInfo] = useState([]);
