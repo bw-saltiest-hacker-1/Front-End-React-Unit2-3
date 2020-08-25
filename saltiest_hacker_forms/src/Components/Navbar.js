@@ -35,6 +35,7 @@ export const SignUpButton = styled.div`
   align-items: center;
   letter-spacing: 0.08em;
   justify-content: center;
+  font-family: 'Londrina Solid', cursive;
 `;
 
 export const SignInButton = styled.div`
@@ -56,6 +57,7 @@ export const SignInButton = styled.div`
   align-items: center;
   letter-spacing: 0.08em;
   justify-content: center;
+  font-family: 'Londrina Solid', cursive;
 `;
 
 export function Navbar() {
