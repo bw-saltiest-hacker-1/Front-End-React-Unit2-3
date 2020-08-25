@@ -43,12 +43,10 @@ export const Container = styled.div`
 
 export const Containerh3 = styled.h3`
 text-align: center;
-/* font-family: poppins; */
 font-size: 1.8rem;
 `
 export const Containerp = styled.p`
 text-align: center;
-/* font-family: poppins; */
 font-size: 1.2rem;
 `
 export const InputField = styled.div`
@@ -66,7 +64,6 @@ export const Label = styled.label`
 display: flex;
 flex-direction: column;
 justify-content: space-evenly;
-/* font-family: poppins; */
 `
 
 export const Input = styled.input`

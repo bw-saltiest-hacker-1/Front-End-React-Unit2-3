@@ -28,7 +28,6 @@ export const SignUpButton = styled.div`
   right: 10.69%;
   top: 33.33%;
   bottom: 29.17%;
-  /* font-family: Poppins; */
   font-style: normal;
   font-size: 14px;
   line-height: 21px;
@@ -50,7 +49,6 @@ export const SignInButton = styled.div`
   bottom: 29.17%;
   left: 74.58%;
   right: 18.89%;
-  /* font-family: Poppins; */
   font-style: normal;
   font-size: 14px;
   line-height: 21px;
