@@ -58,7 +58,7 @@ export default function LogInForm(props) {
     const handleSubmit = (e) => {
     e.preventDefault();
     // <<<<<< BACKEND_LOGIN_API >>>>>>
-    axios.post("BACKEND_LOGIN_API", form)
+        axios.post("https://salty-hacker-1-bw.herokuapp.com/api/auth/login", form)
         .then((res) => {
         console.log(res);
         // setUserInfo(res.data, ...userInfo)
