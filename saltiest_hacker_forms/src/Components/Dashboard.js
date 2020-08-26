@@ -24,8 +24,8 @@ function Dashboard({ fetchingData, posts }) {
             .then(res => {
                 console.log(res)
             })
-            .catch(error => {
-                console.log(error)
+            .catch(err => {
+                console.log(err)
             })
     }
 
