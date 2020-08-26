@@ -5,7 +5,7 @@ import { axiosWithAuth } from '../Utils/axiosWithAuth';
 const BASE_URL = "https://salty-hacker-1-bw.herokuapp.com/api"
 
 export const LOGIN = "login/";
-export const react2Dashboard = "react2Dashboard/";
+export const Dashboard = "Dashboard/";
 
 
 export function call_AUTH(payload) {

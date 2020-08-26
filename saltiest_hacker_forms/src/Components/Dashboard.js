@@ -7,10 +7,8 @@
 
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-
 import { fetchingData } from '../actions'
 import Comments from './Comments'
-
 import axios from 'axios'
 
 function Dashboard({ fetchingData, posts }) {

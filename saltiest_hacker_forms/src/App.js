@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-
 import { Navbar } from '../src/Components/Navbar';
 import LogInForm from './Components/FE_Unit2_React/LogInForm'
 import Signup from './Components/FE_Unit2_React/Signup'
-
 import { PrivateRoute } from '../src/Utils/PrivateRoute';
-// import SaltiestContext from '../src/Contexts/saltiestContext'
+import SaltiestContext from '../src/Contexts/saltiestContext';
 import Dashboard from './Components/Dashboard'
 import SavedPosts from './Components/SavedPosts';
 
