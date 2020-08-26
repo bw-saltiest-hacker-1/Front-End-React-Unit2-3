@@ -1,21 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-
+import { fetchSavedPosts, deletePost } from '../actions/'
+import SavedComment from './SavedComment'
 import axios from 'axios'
-import { fetchSavedPosts } from '../actions/'
-
-import Comments from './Comments'
+// import axiosWithAuth from '../Utils/axiosWithAuth'
 
 function SavedPosts(props) {
-
-    const [posts, setPosts] = useState([])
-
     //action for fetching user's saved posts
     useEffect(() => {
         props.fetchSavedPosts()
     }, [])
 
-    const savedList = props.savedPosts.map(item => <Comments key={item.id} item={item} />)
+    const handleDelete = item => {
+        console.log('clicked handle delete')
+        console.log(item)
+        console.log(props.savedPosts)
+        const newList = props.savedPosts.filter(n => n.id !== item.id)
+        // make action creator for a delete request
+        const finalData = { data: newList }
+        props.deletePost(finalData)
+    }
+
+    const savedList = props.savedPosts.map(item => <SavedComment delete={handleDelete} key={item.id} data={item} />)
+
 
     return (
         <div>
@@ -30,4 +37,8 @@ const mapStateToProps = state => ({
     savedPosts: state.userReducer.savedPosts
 })
 
-export default connect(mapStateToProps, { fetchSavedPosts })(SavedPosts)
+SavedComment.defaultProps = {
+    data: []
+}
+
+export default connect(mapStateToProps, { fetchSavedPosts, deletePost })(SavedPosts)

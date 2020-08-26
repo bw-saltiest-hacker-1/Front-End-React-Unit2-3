@@ -56,18 +56,18 @@ export default function LogInForm(props) {
     }
 
     const handleSubmit = (e) => {
-    e.preventDefault();
-    // <<<<<< BACKEND_LOGIN_API >>>>>>
+        e.preventDefault();
+        // <<<<<< BACKEND_LOGIN_API >>>>>>
         axios.post("https://salty-hacker-1-bw.herokuapp.com/api/auth/login", form)
-        .then((res) => {
-        console.log(res);
-        setUserInfo(res.data, ...userInfo)
-        setForm(initialForm);
-        // history.push("/dashboard")
-        })
-        .catch((err) => {
-        console.log(err);
-        });
+            .then((res) => {
+                console.log(res);
+                setUserInfo(res.data, ...userInfo)
+                setForm(initialForm);
+                // history.push("/dashboard")
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     useEffect(() => {

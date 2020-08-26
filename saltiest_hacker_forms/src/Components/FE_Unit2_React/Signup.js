@@ -68,7 +68,8 @@ export default function LogInForm(props) {
                 console.log(res)
                 setUserInfo(res.data, ...userInfo)
                 setForm(initialForm)
-                // history.push("/dashboard")
+                localStorage.setItem('token', res.data.token)
+                history.push("/dashboard")
             })
             .catch((err => {
                 console.log(err)

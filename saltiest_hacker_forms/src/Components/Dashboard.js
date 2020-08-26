@@ -15,46 +15,14 @@ import axios from 'axios'
 
 function Dashboard({ fetchingData, posts }) {
 
-    const initialState = {
-        troll: '',
-        toxicity: '',
-        comment: '',
-        id: ''
-    }
-
-    const [save, setSave] = useState(initialState)
-
-    //handle click for when a user saves a comment
-    //dummy data is saving the comment object to state,
-    //creating a new object with a property called 'data' that holds the array
-    //the array contains the single saved comment object
-    //gets saved into a dummy API for now
-    //will probably use action creators to save data to DB, depending on what the API returns back
-    const handleClick = item => {
-        setSave(item)
-        const post = {
-            data: [item]
-        }
-        axios.put('https://jsonblob.com/api/jsonblob/26722cad-e72e-11ea-bdf5-672ff27d5abd', post)
-            .then(res => {
-                console.log(res)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
-
     //upon mounting, will fetch latests posts to render to home screen
     useEffect(() => {
         fetchingData()
     }, [])
 
-    //click prop will pass down function that saves comment object to users saved posts
-    const cards = posts.map(item => <Comments click={handleClick} key={item.id} item={item} />)
-
     return (
         <div>
-            {cards}
+            <Comments data={posts} />
         </div>
     )
 }
