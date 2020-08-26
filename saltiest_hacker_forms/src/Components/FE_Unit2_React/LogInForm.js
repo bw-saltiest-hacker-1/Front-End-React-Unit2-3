@@ -31,7 +31,7 @@ export default function LogInForm(props) {
     const [form, setForm] = useState(initialForm)
     const [formError, setFormError] = useState(initialFormErrors)
     const [disabled, setDisabled] = useState(initialDisabled)
-    // const history = useHistory()
+    const history = useHistory()
 
     const handleChange = (e) => {
         e.persist()
@@ -63,7 +63,7 @@ export default function LogInForm(props) {
         console.log(res);
         setUserInfo(res.data, ...userInfo)
         setForm(initialForm);
-        // history.push("/dashboard")
+        history.push("/dashboard")
         })
         .catch((err) => {
         console.log(err);

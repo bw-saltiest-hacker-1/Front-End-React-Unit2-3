@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-
 import axios from 'axios'
 import { fetchSavedPosts } from '../actions/'
-
 import Comments from './Comments'
-
 function SavedPosts(props) {
 
-    const [posts, setPosts] = useState([])
+const [posts, setPosts] = useState([])
 
     //action for fetching user's saved posts
     useEffect(() => {
