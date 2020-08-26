@@ -3,9 +3,11 @@ import { connect } from 'react-redux'
 import { fetchSavedPosts, deletePost } from '../actions/'
 import SavedComment from './SavedComment'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 // import axiosWithAuth from '../Utils/axiosWithAuth'
 
 function SavedPosts(props) {
+    const history = useHistory()
     //action for fetching user's saved posts
     useEffect(() => {
         props.fetchSavedPosts()
@@ -19,6 +21,9 @@ function SavedPosts(props) {
         // make action creator for a delete request
         const finalData = { data: newList }
         props.deletePost(finalData)
+        setTimeout(() => {
+            history.go(0)
+        }, 1000)
     }
 
     const savedList = props.savedPosts.map(item => <SavedComment delete={handleDelete} key={item.id} data={item} />)
