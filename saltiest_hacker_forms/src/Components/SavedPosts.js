@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
 
 import axios from 'axios'
+import { fetchSavedPosts } from '../actions/'
 
 import Comments from './Comments'
 
@@ -8,18 +10,12 @@ function SavedPosts(props) {
 
     const [posts, setPosts] = useState([])
 
+    //action for fetching user's saved posts
     useEffect(() => {
-        axios.get('https://jsonblob.com/api/jsonblob/26722cad-e72e-11ea-bdf5-672ff27d5abd')
-            .then(res => {
-                console.log(res)
-                setPosts([res.data])
-            })
-            .catch(err => {
-                console.log(err)
-            })
+        props.fetchSavedPosts()
     }, [])
 
-    const savedList = posts.map(item => <Comments key={item.id} item={item} />)
+    const savedList = props.savedPosts.map(item => <Comments key={item.id} item={item} />)
 
     return (
         <div>
@@ -28,4 +24,10 @@ function SavedPosts(props) {
     )
 }
 
-export default SavedPosts
+//retrieve props from the userReducer reducer
+const mapStateToProps = state => ({
+    user: state.userReducer.user,
+    savedPosts: state.userReducer.savedPosts
+})
+
+export default connect(mapStateToProps, { fetchSavedPosts })(SavedPosts)
