@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import * as yup from 'yup'
 import axios from 'axios'
-// import Dashboard from '../Dashboard'
+import Dashboard from '../Dashboard'
 import { LogInStyle, LogInHeader, H3one2, H3two2, Container2, Containerh3, Containerp, InputField2, Label, Input, Button, Error } from './LogInStyle'
 
 const initialForm = {
@@ -68,7 +68,7 @@ export default function LogInForm(props) {
                 console.log(res)
                 setUserInfo(res.data, ...userInfo)
                 setForm(initialForm)
-                // history.push("/dashboard")
+                history.push("/dashboard")
             })
             .catch((err => {
                 console.log(err)
