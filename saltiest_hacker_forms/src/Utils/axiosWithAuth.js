@@ -6,7 +6,7 @@ export const axiosWithAuth = () => {
     return axios.create({
         baseURL: "https://salty-hacker-1-bw.herokuapp.com",
         headers: {
-            authorization: localStorage.getItem('token')
+            Authorization: localStorage.getItem('token')
         }
     });
 };
