@@ -63,7 +63,7 @@ export default function LogInForm(props) {
         console.log(res);
         setUserInfo(res.data, ...userInfo)
         setForm(initialForm);
-        history.push("/dashboard")
+        history.push("/")
         })
         .catch((err) => {
         console.log(err);
