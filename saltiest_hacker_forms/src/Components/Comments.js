@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Comments(props) {
-    console.log(props.item)
+    const style = {
+        border: '1px solid black',
+        margin: '1%'
+    }
+
     return (
-        <div>
-            <h4>{props.item.username}</h4>
-            <p>{props.item.troll}</p>
+        <div style={style}>
+            <h4>{props.item.troll}</h4>
+            <p>{props.item.toxicity}</p>
             <p>{props.item.comment}</p>
+            <button onClick={() => props.click(props.item)}>Save</button>
         </div>
     )
 }

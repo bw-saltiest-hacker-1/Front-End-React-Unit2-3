@@ -9,6 +9,7 @@ import Signup from './Components/FE_Unit2_React/Signup'
 import { PrivateRoute } from '../src/Utils/PrivateRoute';
 // import SaltiestContext from '../src/Contexts/saltiestContext'
 import Dashboard from './Components/Dashboard'
+import SavedPosts from './Components/SavedPosts';
 
 function App() {
   const [userInfo, setUserInfo] = useState([]);
@@ -36,7 +37,7 @@ function App() {
           <LogInForm userInfo={userInfo} setUserInfo={setUserInfo} />
         </Route>
 
-        <PrivateRoute path='/savedposts' />
+        <PrivateRoute component={SavedPosts} path='/savedposts' />
 
       </Switch>
     </>
