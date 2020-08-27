@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import axios from 'axios'
 import Comment from './Comment'
 import { connect } from 'react-redux'
@@ -13,8 +13,8 @@ function Comments(props) {
         id: ''
     }
 
-    const [save, setSave] = useState(initialState)
-    const [posts, setPosts] = useState([])
+    // const [save, setSave] = useState(initialState)
+    // const [posts, setPosts] = useState([])
 
     React.useEffect(() => {
         fetchSavedPosts()
@@ -28,7 +28,7 @@ function Comments(props) {
     //will probably use action creators to save data to DB, depending on what the API returns back
     async function handleClick(item) {
         console.log(item)
-        console.log(props.savedPosts)
+        // console.log(props.savedPosts)
         const newData = await axios.get('https://jsonblob.com/api/jsonblob/https://jsonblob.com/api/jsonblob/26722cad-e72e-11ea-bdf5-672ff27d5abd')
             .then(res => {
                 return res.data.data

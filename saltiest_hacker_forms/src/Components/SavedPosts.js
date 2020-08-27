@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { fetchSavedPosts, deletePost } from '../actions/'
+import { fetchSavedPosts, deletePost, updateTox } from '../actions/'
 import SavedComment from './SavedComment'
-import axios from 'axios'
 import { useHistory, Link } from 'react-router-dom'
 // import axiosWithAuth from '../Utils/axiosWithAuth'
 
@@ -32,11 +31,34 @@ function SavedPosts(props) {
         }, 1000)
     }
 
-    const savedList = props.savedPosts.map(item => <SavedComment delete={handleDelete} key={item.id} data={item} />)
+    const handleClick = item => {
+        let newVal = Number(prompt('new toxicity level 0-100'))
+        newVal = newVal / 100
+        console.log(newVal)
+        const newList = props.savedPosts.map(n => {
+            if (n.id === item.id) {
+                return {
+                    comment: item.comment,
+                    tox: newVal,
+                    troll: item.troll,
+                    id: item.id
+                }
+            }
+            return n
+        })
+        const finalData = { data: newList }
+        // console.log(finalData)
+        props.updateTox(finalData)
+        setTimeout(() => {
+            history.go(0)
+        }, 1000)
+    }
 
+    const savedList = props.savedPosts.map(item => <SavedComment click={handleClick} delete={handleDelete} key={item.id} data={item} />)
 
     return (
         <div>
+            {props.savedPosts.length === 0 && <h2>You haven't saved any comments</h2>}
             {token && <button style={style}><Link to='/'>Home</Link></button>}
             {savedList}
         </div>
@@ -53,4 +75,4 @@ SavedComment.defaultProps = {
     data: []
 }
 
-export default connect(mapStateToProps, { fetchSavedPosts, deletePost })(SavedPosts)
+export default connect(mapStateToProps, { fetchSavedPosts, deletePost, updateTox })(SavedPosts)

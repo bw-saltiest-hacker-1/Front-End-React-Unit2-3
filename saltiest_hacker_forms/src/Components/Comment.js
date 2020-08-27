@@ -9,9 +9,9 @@ function Comment(props) {
 
     return (
         <div style={style}>
-            <h4>{props.item.author}</h4>
+            <h4>{props.item.troll}</h4>
             <p>{props.item.tox}</p>
-            <p>{props.item.text}</p>
+            <p>{props.item.comment}</p>
             <button onClick={() => props.click(props.item)}>Save</button>
         </div>
     )
