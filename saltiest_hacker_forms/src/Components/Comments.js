@@ -6,12 +6,12 @@ import { fetchSavedPosts, savePost } from '../actions'
 
 function Comments(props) {
     // console.log(props)
-    const initialState = {
-        author: '',
-        tox: '',
-        text: '',
-        id: ''
-    }
+    // const initialState = {
+    //     author: '',
+    //     tox: '',
+    //     text: '',
+    //     id: ''
+    // }
 
     // const [save, setSave] = useState(initialState)
     // const [posts, setPosts] = useState([])

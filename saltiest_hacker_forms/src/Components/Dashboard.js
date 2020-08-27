@@ -15,7 +15,6 @@ import Comments from './Comments'
 // import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-
 function Dashboard({ fetchingData, posts }) {
     const token = localStorage.getItem('token')
     //upon mounting, will fetch latests posts to render to home screen

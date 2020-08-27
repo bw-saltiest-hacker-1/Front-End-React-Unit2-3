@@ -1,19 +1,20 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const Container = styled.div`
+    border: 2px solid red;
+`
 
 
 function Comment(props) {
-    const style = {
-        border: '1px solid black',
-        margin: '1%'
-    }
 
     return (
-        <div style={style}>
+        <Container>
             <h4>{props.item.troll}</h4>
             <p>{props.item.tox}</p>
             <p>{props.item.comment}</p>
             <button onClick={() => props.click(props.item)}>Save</button>
-        </div>
+        </Container>
     )
 }
 

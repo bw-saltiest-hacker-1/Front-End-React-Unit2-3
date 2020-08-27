@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Switch, Route, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import * as yup from 'yup'
 import axios from 'axios'
 import Form from './Form'
