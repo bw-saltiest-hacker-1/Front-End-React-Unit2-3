@@ -42,7 +42,7 @@ function App() {
           <LogInForm userInfo={userInfo} setUserInfo={setUserInfo} />
         </Route>
 
-        <PrivateRoute component={GitHub} path='/GitHub' />
+        <PrivateRoute component={SavedPosts} path='/savedposts' />
 
       </Switch>
     </>
