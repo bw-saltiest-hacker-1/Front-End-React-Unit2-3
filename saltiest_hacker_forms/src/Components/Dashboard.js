@@ -5,12 +5,17 @@
 //We will also need to know what the PUT route expects as the second argument.
 // **We need to handle authentication on the login and register page.
 
+//8/26 @ 5:26pm:
+//still need the Create and Update dummy operations
+
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { fetchingData } from '../actions'
 import Comments from './Comments'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+
+import { axiosWithAuth } from '../Utils/axiosWithAuth'
 
 function Dashboard({ fetchingData, posts }) {
     const token = localStorage.getItem('token')
@@ -24,8 +29,17 @@ function Dashboard({ fetchingData, posts }) {
         margin: "auto"
     }
 
+    const testfunct = () => {
+        console.log("clicked")
+        axiosWithAuth()
+            .get('/api/data')
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+    }
+
     return (
         <div>
+            <button onClick={testfunct}>Test</button>
             {token && <button style={style}><Link to='/savedposts'>Saved Posts</Link></button>}
             <Comments data={posts} />
         </div>
