@@ -8,6 +8,10 @@ import { PrivateRoute } from '../src/Utils/PrivateRoute';
 import SaltiestContext from '../src/Contexts/saltiestContext';
 import Dashboard from './Components/Dashboard'
 import SavedPosts from './Components/SavedPosts';
+// <<<<<< React 1 GET
+import GitHub from './Components/GitHub';
+// <<<<<< END React 1 GET
+
 
 function App() {
   const [userInfo, setUserInfo] = useState([]);
@@ -25,6 +29,9 @@ function App() {
 
         <Route exact path='/'>
           <Dashboard />
+          {/* // <<<<<< React 1 */}
+          {/* <GitHub /> */}
+          {/* // <<<<<< END React 1 */}
         </Route>
 
         <Route path='/signup'>
@@ -35,7 +42,7 @@ function App() {
           <LogInForm userInfo={userInfo} setUserInfo={setUserInfo} />
         </Route>
 
-        <PrivateRoute component={SavedPosts} path='/savedposts' />
+        <PrivateRoute component={GitHub} path='/GitHub' />
 
       </Switch>
     </>
