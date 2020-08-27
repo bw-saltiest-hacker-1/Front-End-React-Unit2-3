@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchSavedPosts, deletePost, updateTox } from '../actions/'
 import SavedComment from './SavedComment'
 import { useHistory, Link } from 'react-router-dom'
+import { Button, Background } from '../Styles/styled'
 // import axiosWithAuth from '../Utils/axiosWithAuth'
 
 function SavedPosts(props) {
@@ -57,11 +58,11 @@ function SavedPosts(props) {
     const savedList = props.savedPosts.map(item => <SavedComment click={handleClick} delete={handleDelete} key={item.id} data={item} />)
 
     return (
-        <div>
+        <Background>
             {props.savedPosts.length === 0 && <h2>You haven't saved any comments</h2>}
-            {token && <button style={style}><Link to='/'>Home</Link></button>}
+            {token && <Button style={style}><Link to='/'>Home</Link></Button>}
             {savedList}
-        </div>
+        </Background>
     )
 }
 

@@ -1,19 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
-
-const Container = styled.div`
-    border: 2px solid red;
-`
-
+import { Container, Header, T, P, Button2, Icon } from '../Styles/styled'
 
 function Comment(props) {
 
     return (
         <Container>
-            <h4>{props.item.troll}</h4>
-            <p>{props.item.tox}</p>
-            <p>{props.item.comment}</p>
-            <button onClick={() => props.click(props.item)}>Save</button>
+            <Header>{props.item.troll}</Header>
+            <T><Icon src='https://i.imgur.com/jYM0tRD.png' />{props.item.tox}</T>
+            <P>{props.item.comment}</P>
+            <Button2 onClick={() => props.click(props.item)}>Save</Button2>
         </Container>
     )
 }

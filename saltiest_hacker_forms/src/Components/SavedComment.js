@@ -1,4 +1,5 @@
 import React from 'react'
+import { Container, Header, T, P, Button2 } from '../Styles/styled'
 // import { connect } from 'react-redux'
 // import { fetchSavedPosts } from '../actions'
 
@@ -9,12 +10,12 @@ function SavedComment(props) {
     // }, [])
 
     return (
-        <div onClick={() => props.click(props.data)}>
-            <h4>{props.data.troll}</h4>
-            <p>{props.data.tox}</p>
-            <p>{props.data.comment}</p>
-            <button onClick={() => props.delete(props.data)}>Delete</button>
-        </div>
+        <Container>
+            <Header>{props.data.troll}</Header>
+            <T onClick={() => props.click(props.data)}>{props.data.tox}</T>
+            <P>{props.data.comment}</P>
+            <Button2 onClick={() => props.delete(props.data)}>Delete</Button2>
+        </Container>
     )
 }
 

@@ -14,6 +14,10 @@ import { fetchingData } from '../actions'
 import Comments from './Comments'
 // import axios from 'axios'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import { Button, Background } from '../Styles/styled'
+
+
 
 function Dashboard({ fetchingData, posts }) {
     const token = localStorage.getItem('token')
@@ -22,16 +26,11 @@ function Dashboard({ fetchingData, posts }) {
         fetchingData()
     }, [])
 
-    const style = {
-        display: 'block',
-        margin: "auto"
-    }
-
     return (
-        <div>
-            {token && <button style={style}><Link to='/savedposts'>Saved Posts</Link></button>}
+        <Background>
+            {token && <Button><Link to='/savedposts'>Saved Posts</Link></Button>}
             <Comments data={posts} />
-        </div>
+        </Background>
     )
 }
 
