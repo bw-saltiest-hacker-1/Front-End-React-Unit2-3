@@ -7,9 +7,9 @@ import { fetchSavedPosts, savePost } from '../actions'
 function Comments(props) {
     // console.log(props)
     const initialState = {
-        troll: '',
-        toxicity: '',
-        comment: '',
+        author: '',
+        tox: '',
+        text: '',
         id: ''
     }
 

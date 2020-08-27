@@ -10,9 +10,9 @@ function SavedComment(props) {
 
     return (
         <div>
-            <h4>{props.data.troll}</h4>
+            <h4>{props.data.author}</h4>
             <p>{props.data.tox}</p>
-            <p>{props.data.comment}</p>
+            <p>{props.data.text}</p>
             <button onClick={() => props.delete(props.data)}>Delete</button>
         </div>
     )

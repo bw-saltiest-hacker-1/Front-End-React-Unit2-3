@@ -3,10 +3,10 @@ import axios from 'axios'
 //res.data returns an object with a data property.  The data prop is an array of comment
 //objects.  This data structure could change depending on the API
 export const fetchingData = param => dispatch => {
-    axios.get('https://jsonblob.com/api/jsonblob/6dd45faf-e7db-11ea-bb30-ff4f3d65208e')
+    axios.get('https://salty-hacker-1-bw.herokuapp.com/api/data')
         .then(res => {
             console.log(res)
-            dispatch({ type: 'FETCHED_DATA', payload: res.data.data })
+            dispatch({ type: 'FETCHED_DATA', payload: res.data })
         })
         .catch(error => {
             dispatch({ type: 'ERROR', payload: error.message })

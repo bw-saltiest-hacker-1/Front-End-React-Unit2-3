@@ -15,6 +15,8 @@ import Comments from './Comments'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
+import { axiosWithAuth } from '../Utils/axiosWithAuth'
+
 function Dashboard({ fetchingData, posts }) {
     const token = localStorage.getItem('token')
     //upon mounting, will fetch latests posts to render to home screen
@@ -27,8 +29,17 @@ function Dashboard({ fetchingData, posts }) {
         margin: "auto"
     }
 
+    const testfunct = () => {
+        console.log("clicked")
+        axiosWithAuth()
+            .get('/api/data')
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+    }
+
     return (
         <div>
+            <button onClick={testfunct}>Test</button>
             {token && <button style={style}><Link to='/savedposts'>Saved Posts</Link></button>}
             <Comments data={posts} />
         </div>
