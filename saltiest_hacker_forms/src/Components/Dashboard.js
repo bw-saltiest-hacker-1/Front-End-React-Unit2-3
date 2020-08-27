@@ -10,16 +10,23 @@ import { connect } from 'react-redux'
 import { fetchingData } from '../actions'
 import Comments from './Comments'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 function Dashboard({ fetchingData, posts }) {
-
+    const token = localStorage.getItem('token')
     //upon mounting, will fetch latests posts to render to home screen
     useEffect(() => {
         fetchingData()
     }, [])
 
+    const style = {
+        display: 'block',
+        margin: "auto"
+    }
+
     return (
         <div>
+            {token && <button style={style}><Link to='/savedposts'>Saved Posts</Link></button>}
             <Comments data={posts} />
         </div>
     )
