@@ -61,7 +61,7 @@ export const Button2 = styled.button`
 export const Background = styled.div`
     background: #114d79;
     margin: 1% auto;
-    padding: 0.5%;
+    padding: 0.50%;
 `
 
 export const Icon = styled.img`
